@@ -1,0 +1,16 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Shop One
+  pref: Ishikawa
+  address: Kanazawa-Shi
+  phone: 100-000-0000
+  description: 1st Shop
+
+two:
+  name: Shop Two
+  pref: Toyama
+  address: Toyama-Shi
+  phone: 200-000-0000
+  description: 2nd Shop
+  

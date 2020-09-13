@@ -1,0 +1,22 @@
+<h1>Shops</h1>
+
+<div class="row">
+  <% @shops.each do |shop| %>
+    <div class="col-md-4 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body p-1">
+          <%= link_to shop do %>
+            <div class="shop_thumb">
+              <%= image_tag shop.display_image if shop.image.attached? %>
+            </div>
+            <div class="p-3">
+              <%= shop.name %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "Add New Shop", new_shop_path, class: 'btn btn-primary' %>

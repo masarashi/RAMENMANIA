@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      shop: 店舗
+    attributes:
+      shop:
+        name: 店舗名
+        pref: 県
+        address: 住所
+        phone: 電話番号
+        description: 説明
+        image: 店舗イメージ

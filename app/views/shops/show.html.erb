@@ -1,0 +1,33 @@
+<h2>基本情報</h2>
+
+<div class="shop_top">
+  <%= image_tag @shop.display_image if @shop.image.attached? %>
+</div>
+
+<table class="table table-striped">
+  <tr>
+    <th><%= Shop.human_attribute_name(:name) %></th>
+    <td><%= @shop.name %></td>
+  </tr>
+  <tr>
+    <th><%= Shop.human_attribute_name(:pref) %></th>
+    <td><%= @shop.pref %></td>
+  </tr>
+  <tr>
+    <th><%= Shop.human_attribute_name(:address) %></th>
+    <td><%= @shop.address %></td>
+  </tr>
+  <tr>
+    <th><%= Shop.human_attribute_name(:phone) %></th>
+    <td><%= @shop.phone %></td>
+  </tr>
+  <tr>
+    <th><%= Shop.human_attribute_name(:description) %></th>
+    <td><%= @shop.description %></td>
+  </tr>
+</table>
+
+<div class="text-center mb-4">
+  <%= link_to "編集", [:edit, @shop], class: 'btn btn-primary' %>
+  <%= link_to "削除", @shop, class: 'btn btn-danger', method: :delete, data: { confirm: "本当に削除しますか？" } %>
+</div>
