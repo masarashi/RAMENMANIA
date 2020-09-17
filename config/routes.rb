@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   get  '/about',   to: 'static_pages#about'
   get  '/contact', to: 'static_pages#contact'
 
-  resources :shops
+  resources :shops do
+    resources :menus, shallow: true
+    # resources :menus
+  end
 end

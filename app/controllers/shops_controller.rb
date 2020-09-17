@@ -6,6 +6,7 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
+    @shop_menus = @shop.menus.all.order(name: :asc)
   end
 
   def new
@@ -37,7 +38,7 @@ class ShopsController < ApplicationController
   end
 
   def destroy
-    Shop.dinf(params[:id]).destroy
+    Shop.find(params[:id]).destroy
     flash[:success] = "削除されました"
     redirect_to shops_path
   end

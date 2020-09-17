@@ -10,3 +10,7 @@ ja:
         phone: 電話番号
         description: 説明
         image: 店舗イメージ
+      menu:
+        name: 商品名
+        price: 価格
+        description: 説明

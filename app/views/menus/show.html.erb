@@ -1,0 +1,25 @@
+<h2>メニュー詳細</h2>
+
+<table class="table table-striped">
+  <tr>
+    <th><%= Menu.human_attribute_name(:name) %></th>
+    <td><%= @menu.name %></td>
+  </tr>
+  <tr>
+    <th><%= Menu.human_attribute_name(:price) %></th>
+    <td><%= @menu.price %></td>
+  </tr>
+  <tr>
+    <th><%= Menu.human_attribute_name(:description) %></th>
+    <td><%= @menu.description %></td>
+  </tr>
+    <tr>
+    <th><%= Shop.human_attribute_name(:name) %></th>
+    <td><%= link_to @menu.shop.name, shop_path(@menu.shop_id) %></td>
+  </tr>
+</table>
+
+<div class="text-center">
+  <%= link_to "編集", edit_menu_path(@menu), class: 'btn btn-primary' %>
+  <%= link_to "削除", @menu, class: 'btn btn-danger', method: :delete, data: { confirm: "本当に削除しますか？" } %>
+</div>

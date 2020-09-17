@@ -1,0 +1,31 @@
+<% if @shop_menus.present? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><%= Menu.human_attribute_name(:name) %></th>
+        <th><%= Menu.human_attribute_name(:price) %></th>
+        <th><%= Menu.human_attribute_name(:description) %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @shop_menus.each do |menu| %>
+        <tr>
+          <td><%= link_to menu.name, menu %></td>
+          <td><%= menu.price %></td>
+          <td><%= menu.description %></td>
+          <td>
+            <%= link_to "編集", edit_menu_path(menu), class: 'btn btn-primary' %>
+            <%= link_to "削除", menu, class: 'btn btn-danger', method: :delete, data: { confirm: "本当に削除しますか？" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>メニューは登録されていません</p>
+<%end %>
+
+<div class="text-center mb-4">
+  <%= link_to "追加", new_shop_menu_path(@shop), class: 'btn btn-primary' %>
+</div>
