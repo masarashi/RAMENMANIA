@@ -1,4 +1,8 @@
 class MenusController < ApplicationController
+  include MenusHelper
+
+  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
+  before_action :menu_admin, only: [:new, :create, :edit, :update, :destroy]
 
   def show
     @menu = Menu.find(params[:id])
@@ -44,5 +48,9 @@ class MenusController < ApplicationController
 
     def menu_params
       params.require(:menu).permit(:name, :price, :description)
+    end
+
+    def menu_admin
+      redirect_to(root_url) unless menu_admin?(current_user)
     end
 end

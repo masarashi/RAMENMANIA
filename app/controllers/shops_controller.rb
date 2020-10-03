@@ -1,4 +1,8 @@
 class ShopsController < ApplicationController
+  include ShopsHelper
+
+  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
+  before_action :shop_admin, only: [:edit, :update, :destroy]
 
   def index
     @shops = Shop.all
@@ -14,7 +18,8 @@ class ShopsController < ApplicationController
   end
 
   def create
-    @shop = Shop.new(shop_params)
+    @user = current_user
+    @shop = @user.shops.build(shop_params)
     if @shop.save
       flash[:info] = "登録が完了しました"
       redirect_to shops_path
@@ -47,5 +52,9 @@ class ShopsController < ApplicationController
 
     def shop_params
       params.require(:shop).permit(:name, :pref, :address, :phone, :description, :image)
+    end
+
+    def shop_admin
+      redirect_to(root_url) unless shop_admin?(current_user)
     end
 end

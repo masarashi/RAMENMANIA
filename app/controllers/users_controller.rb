@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  # before_action 
+  before_action :authenticate_admin!, only: [:index, :show]
+  before_action :authenticate_user!, only: [:show, :myshops]
 
   def index
     @users = User.paginate(page: params[:page])
@@ -7,5 +8,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+  end
+
+  def myshops
+    @user = current_user
+    @shops = @user.shops
   end
 end

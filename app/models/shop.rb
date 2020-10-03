@@ -1,4 +1,5 @@
 class Shop < ApplicationRecord
+  belongs_to :user, dependent: :destroy
   has_many :menus, dependent: :destroy
   validates :name, presence: true, length: { maximum: 64 }
   validates :pref, length: { maximum: 16 }

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     registrations: 'admins/registrations'
   }
 
+  get '/users/myshops', to: 'users#myshops'
+
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',
@@ -14,9 +16,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   
   root 'static_pages#home'
-  get  '/help',    to: 'static_pages#help'
-  get  '/about',   to: 'static_pages#about'
-  get  '/contact', to: 'static_pages#contact'
+  get '/help',    to: 'static_pages#help'
+  get '/about',   to: 'static_pages#about'
+  get '/contact', to: 'static_pages#contact'
 
   resources :shops do
     resources :menus, shallow: true

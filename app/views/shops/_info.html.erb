@@ -25,7 +25,9 @@
   </tr>
 </table>
 
-<div class="text-center mb-4">
-  <%= link_to "編集", [:edit, @shop], class: 'btn btn-primary' %>
-  <%#= link_to "削除", @shop, class: 'btn btn-danger', method: :delete, data: { confirm: "本当に削除しますか？" } %>
-</div>
+<% if shop_admin?(current_user) %>
+  <div class="text-center mb-4">
+    <%= link_to "編集", [:edit, @shop], class: 'btn btn-primary' %>
+    <%= link_to "削除", @shop, class: 'btn btn-danger', method: :delete, data: { confirm: "本当に削除しますか？" } %>
+  </div>
+<% end %>
