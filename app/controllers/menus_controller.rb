@@ -2,7 +2,7 @@ class MenusController < ApplicationController
   include MenusHelper
 
   before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
-  before_action :menu_admin, only: [:new, :create, :edit, :update, :destroy]
+  before_action :menu_admin, only: [:create, :update, :destroy]
 
   def show
     @menu = Menu.find(params[:id])
