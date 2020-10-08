@@ -11,6 +11,7 @@ class ShopsController < ApplicationController
   def show
     @shop = Shop.find(params[:id])
     @shop_menus = @shop.menus.all.order(name: :asc)
+    @shop_reviews = @shop.reviews.all.order(updated_at: :asc)
   end
 
   def new

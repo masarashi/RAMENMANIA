@@ -43,7 +43,7 @@ h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
+  // text-align: center;
   font-weight: normal;
   color: $gray-light;
 }
@@ -168,4 +168,30 @@ ul, ol {
 .shop_nav_item.active a,
 .shop_nav_item a:hover {
   background-color: #eee;
+}
+
+
+/* review star */
+
+.star-rating {
+  position: relative;
+  width: 5em;
+  height: 1em;
+  // font-size: 25px;
+}
+
+.star-rating-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #ffcc33;
+}
+
+.star-rating-back {
+  color: #ccc;
+}
+
+.score {
+  display: flex;
 }

@@ -1,0 +1,46 @@
+<script>
+  window.onpageshow = function(event) {
+    if (event.persisted) {
+      window.location.reload();
+    }
+  };
+</script>
+
+<%= form_with model: [@shop, @review], local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.hidden_field :user_id, value: @user.id %>
+
+  <div class="form-group">
+    <%#= f.label :score %>
+    <div id="star">
+      <%= f.hidden_field :score, id: :review_score  %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.text_field :content, class: 'form-control' %>
+  </div>
+  <div class="text-center">
+    <%= f.submit class: 'btn btn-primary' %>
+    <%= link_to "キャンセル", @shop, class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<script>
+  history.replaceState(null, document.getElementsByTagName('title')[0].innerHTML, null);
+  window.addEventListener('popstate', function(e) {
+    window.location.reload();
+  });
+  $('#star').raty({
+    size      : 36,
+    score     : 1,
+    scoreName : 'review[score]',
+    starOff   : '<%= asset_path('star-off-big.png') %>',
+    starOn    : '<%= asset_path('star-on-big.png') %>'
+  });
+</script>

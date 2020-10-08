@@ -1,7 +1,15 @@
+<% provide(:title, @shop.name) %>
+
+<%= link_to "レビューを投稿する", new_shop_review_path(@shop), class: 'btn btn-info' %>
+
 <h2>基本情報</h2>
 
 <%= render 'info' %>
 
+<h2>レビュー</h2>
+
+<%= render 'reviews' %>
+
 <h2>メニュー情報</h2>
 
-<%= render 'menu' %>
+<%= render 'menus' %>

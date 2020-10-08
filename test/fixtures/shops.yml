@@ -2,15 +2,17 @@
 
 one:
   name: Shop One
-  pref: Ishikawa
+  prefecture_code: 17
   address: Kanazawa-Shi
   phone: 100-000-0000
   description: 1st Shop
+  user: john
 
 two:
   name: Shop Two
-  pref: Toyama
+  prefecture_code: 18
   address: Toyama-Shi
   phone: 200-000-0000
   description: 2nd Shop
+  user: john
   

@@ -22,5 +22,6 @@ Rails.application.routes.draw do
 
   resources :shops do
     resources :menus, shallow: true
+    resources :reviews, shallow: true
   end
 end
