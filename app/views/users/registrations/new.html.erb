@@ -5,12 +5,12 @@
 
   <div class="field form-group">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'form-control' %>
+    <%= f.text_field :name, placeholder: "お名前", autofocus: true, autocomplete: "name", class: 'form-control' %>
   </div>
 
   <div class="field form-group">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email", class: 'form-control' %>
+    <%= f.email_field :email, placeholder: "メールアドレス", autocomplete: "email", class: 'form-control input' %>
   </div>
 
   <div class="field form-group">
@@ -18,12 +18,12 @@
     <% if @minimum_password_length %>
     <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
+    <%= f.password_field :password, placeholder: "パスワード", autocomplete: "new-password", class: 'form-control' %>
   </div>
 
   <div class="field form-group">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
+    <%= f.password_field :password_confirmation, placeholder: "パスワード（もう一度入力）", autocomplete: "new-password", class: 'form-control' %>
   </div>
 
   <div class="actions form-group">

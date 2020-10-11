@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :admins, controllers: {
     sessions: 'admins/sessions',
     passwords: 'admins/passwords',
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
   
   resources :users, only: [:index, :show]
   
-  root 'static_pages#home'
+  root 'shops#index'
   get '/help',    to: 'static_pages#help'
   get '/about',   to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'

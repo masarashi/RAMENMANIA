@@ -11,15 +11,15 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th><%= Menu.human_attribute_name(:title) %></th>
         <th><%= Menu.human_attribute_name(:score) %></th>
+        <th><%= Menu.human_attribute_name(:title) %></th>
         <th><%= Menu.human_attribute_name(:content) %></th>
+        <th><%= Menu.human_attribute_name(:created_at) %></th>
       </tr>
     </thead>
     <tbody>
-      <% @shop_reviews.each do |review| %>
+      <% @shop_reviews.first(5).each do |review| %>
         <tr>
-          <td><%= review.title %></td>
           <td>
             <span class="score">
               <span class="star-rating">
@@ -28,7 +28,9 @@
               </span>
             </span>
           </td>
+          <td><%= review.title %></td>
           <td><%= review.content %></td>
+          <td><%= review.created_at %></td>
         </tr>
       <% end %>
     </tbody>

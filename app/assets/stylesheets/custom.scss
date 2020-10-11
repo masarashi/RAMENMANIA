@@ -1,8 +1,8 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
 /* mixins, variables, etc. */
 
+$gray: gray;
+$gray-darker: darkgray;
+$gray-light: lightgray;
 $gray-medium-light: #eaeaea;
 
 /* universal */
@@ -45,7 +45,7 @@ h2 {
   margin-bottom: 30px;
   // text-align: center;
   font-weight: normal;
-  color: $gray-light;
+  // color: $gray-light;
 }
 
 p {
