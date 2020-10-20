@@ -22,18 +22,28 @@ class Shop < ApplicationRecord
   end
 
   def avg_score
-    unless self.reviews.empty?
-      reviews.average(:score).round(1).to_f
-    else
+    # unless self.reviews.empty?
+    #   reviews.average(:score).round(1).to_f
+    # else
+    #   0.0
+    # end
+    if self.reviews.empty?
       0.0
+    else
+      reviews.average(:score).round(1).to_f
     end
   end
 
   def score_percentage
-    unless self.reviews.empty?
-      reviews.average(:score).round(1).to_f * 100 / 5
-    else
+    # unless self.reviews.empty?
+    #   reviews.average(:score).round(1).to_f * 100 / 5
+    # else
+    #   0.0
+    # end
+    if self.reviews.empty?
       0.0
+    else
+      reviews.average(:score).round(1).to_f * 100 / 5
     end
   end
 end
