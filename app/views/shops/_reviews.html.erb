@@ -1,11 +1,11 @@
 <% if @shop_reviews.present? %>
   <div class="score">
     <div class="star-rating">
-      <div class="star-rating-front" style="width: <%= @shop.score_percentage %>%">★★★★★</div>
+      <div class="star-rating-front" style="width: <%= shop.score_percentage %>%">★★★★★</div>
       <div class="star-rating-back">★★★★★</div>
     </div>
     <div>
-      <%= @shop.avg_score %>（<%= @shop.reviews.count %>件のレビュー）
+      <%= shop.avg_score %>（<%= shop.reviews.count %>件のレビュー）
     </div>
   </div>
   <table class="table table-striped">

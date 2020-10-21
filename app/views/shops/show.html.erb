@@ -8,13 +8,13 @@
 
 <h2>最新のレビュー</h2>
 
-<%= render 'reviews' %>
+<%= render 'reviews', shop: @shop %>
 
 <h2>店舗情報</h2>
 
-<%= render 'info' %>
+<%= render 'info', shop: @shop %>
 
 
 <h2>メニュー情報</h2>
 
-<%= render 'menus' %>
+<%= render 'menus', shop: @shop %>
