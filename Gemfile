@@ -56,6 +56,7 @@ group :development do
   gem 'rubocop-rspec'
   gem 'rails_best_practices'
   gem 'brakeman', require: false
+  gem 'rubycritic', require: false
 end
 
 group :test do
