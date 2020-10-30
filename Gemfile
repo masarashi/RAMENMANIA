@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'active_storage_validations', '0.8.2'
 gem 'image_processing', '~> 1.2'
 gem 'mini_magick', '4.9.5'
+gem "aws-sdk-s3", require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
