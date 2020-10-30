@@ -74,7 +74,8 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '1.1.4'
+  gem 'unicorn'
+  gem 'mysql2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -83,4 +84,3 @@ gem 'rails-i18n', '~> 6'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'font-awesome-sass'
-
