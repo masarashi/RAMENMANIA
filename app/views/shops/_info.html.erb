@@ -23,8 +23,11 @@
 
 <% if shop_admin?(current_user) %>
   <div class="text-center mb-4">
-    <%#= link_to "編集", [:edit, @shop], class: 'btn btn-primary' %>
-    <%= link_to "編集", [:edit, @shop], class: 'fa fa-edit' %>
-    <%= link_to "削除", @shop, method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'fa fa-trash-alt' %>
+    <%= link_to [:edit, @shop] do %>
+      <i class="fas fa-edit"></i>編集
+    <% end %>
+    <%= link_to @shop, method: :delete, data: { confirm: "本当に削除しますか？" } do %>
+      <i class="fa fa-trash-alt"></i>削除
+    <% end %>
   </div>
 <% end %>
